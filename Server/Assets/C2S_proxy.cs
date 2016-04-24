@@ -13,13 +13,13 @@ namespace C2S
 {
 	internal class Proxy:Nettention.Proud.RmiProxy
 	{
-public bool RequestLogon(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, String Clientname, bool isNewClient)
+public bool RequestLogon(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, String Groupname, bool isNewClient)
 {
 	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
 		__msg.SimplePacketMode = core.IsSimplePacketMode();
 		Nettention.Proud.RmiID __msgid= Common.RequestLogon;
 		__msg.Write(__msgid);
-		CardClient.Marshaler.Write(__msg, Clientname);
+		CardClient.Marshaler.Write(__msg, Groupname);
 		CardClient.Marshaler.Write(__msg, isNewClient);
 		
 	Nettention.Proud.HostID[] __list = new Nettention.Proud.HostID[1];
@@ -29,13 +29,13 @@ public bool RequestLogon(Nettention.Proud.HostID remote,Nettention.Proud.RmiCont
 		RmiName_RequestLogon, Common.RequestLogon);
 }
 
-public bool RequestLogon(Nettention.Proud.HostID[] remotes,Nettention.Proud.RmiContext rmiContext, String Clientname, bool isNewClient)
+public bool RequestLogon(Nettention.Proud.HostID[] remotes,Nettention.Proud.RmiContext rmiContext, String Groupname, bool isNewClient)
 {
 	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
 __msg.SimplePacketMode = core.IsSimplePacketMode();
 Nettention.Proud.RmiID __msgid= Common.RequestLogon;
 __msg.Write(__msgid);
-CardClient.Marshaler.Write(__msg, Clientname);
+CardClient.Marshaler.Write(__msg, Groupname);
 CardClient.Marshaler.Write(__msg, isNewClient);
 		
 	return RmiSend(remotes,rmiContext,__msg,

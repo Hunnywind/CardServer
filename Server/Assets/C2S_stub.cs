@@ -16,8 +16,8 @@ namespace C2S
 public AfterRmiInvocationDelegate AfterRmiInvocation = delegate(Nettention.Proud.AfterRmiSummary summary) {};
 public BeforeRmiInvocationDelegate BeforeRmiInvocation = delegate(Nettention.Proud.BeforeRmiSummary summary) {};
 
-		public delegate bool RequestLogonDelegate(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, String Clientname, bool isNewClient);  
-		public RequestLogonDelegate RequestLogon = delegate(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, String Clientname, bool isNewClient)
+		public delegate bool RequestLogonDelegate(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, String Groupname, bool isNewClient);  
+		public RequestLogonDelegate RequestLogon = delegate(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, String Groupname, bool isNewClient)
 		{ 
 			return false;
 		};
@@ -46,13 +46,13 @@ case Common.RequestLogon:
 		ctx.encryptMode = pa.EncryptMode;
 		ctx.compressMode = pa.CompressMode;
 			
-		String Clientname; CardClient.Marshaler.Read(__msg,out Clientname);	
+		String Groupname; CardClient.Marshaler.Read(__msg,out Groupname);	
 bool isNewClient; CardClient.Marshaler.Read(__msg,out isNewClient);	
 core.PostCheckReadMessage(__msg, RmiName_RequestLogon);
 		if(enableNotifyCallFromStub==true)
 		{
 			string parameterString="";
-			parameterString+=Clientname.ToString()+",";
+			parameterString+=Groupname.ToString()+",";
 parameterString+=isNewClient.ToString()+",";
 			NotifyCallFromStub(Common.RequestLogon, RmiName_RequestLogon,parameterString);
 		}
@@ -70,7 +70,7 @@ parameterString+=isNewClient.ToString()+",";
 		long t0 = Nettention.Proud.PreciseCurrentTime.GetTimeMs();
 			
 		// Call this method.
-		bool __ret=RequestLogon (remote,ctx , Clientname, isNewClient );
+		bool __ret=RequestLogon (remote,ctx , Groupname, isNewClient );
 			
 		if(__ret==false)
 		{

@@ -10,7 +10,7 @@ namespace Server
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("<Duel Manager Game Server");
+            Console.WriteLine("Duel Manager Game Server");
             Console.WriteLine("ESC: Quit");
 
             Server server = new Server();

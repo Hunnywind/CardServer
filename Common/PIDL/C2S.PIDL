@@ -1,5 +1,5 @@
 [marshaler(cs)=CardClient.Marshaler]
 global C2S 3000
 {
-	RequestLogon([in] String Clientname, [in] bool isNewClient);
+	RequestLogon([in] String Groupname, [in] bool isNewClient);
 }

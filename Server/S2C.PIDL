@@ -1,0 +1,5 @@
+[marshaler(cs)=CardClient.Marshaler]
+global S2C 4000
+{
+	ReplyLogon([in] int groupID, [in] int result, [in] String comment);
+}

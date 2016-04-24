@@ -1,0 +1,5 @@
+c:\users\administrator\documents\visual studio 2015\Projects\CardServer\Common\bin\Debug\Common.dll
+c:\users\administrator\documents\visual studio 2015\Projects\CardServer\Common\bin\Debug\Common.pdb
+c:\users\administrator\documents\visual studio 2015\Projects\CardServer\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2015\Projects\CardServer\Common\obj\Debug\Common.dll
+c:\users\administrator\documents\visual studio 2015\Projects\CardServer\Common\obj\Debug\Common.pdb

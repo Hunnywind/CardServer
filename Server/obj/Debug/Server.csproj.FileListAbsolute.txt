@@ -1,0 +1,12 @@
+c:\users\administrator\documents\visual studio 2015\Projects\CardServer\Server\bin\Debug\Server.exe.config
+c:\users\administrator\documents\visual studio 2015\Projects\CardServer\Server\bin\Debug\Server.exe
+c:\users\administrator\documents\visual studio 2015\Projects\CardServer\Server\bin\Debug\Server.pdb
+c:\users\administrator\documents\visual studio 2015\Projects\CardServer\Server\bin\Debug\Common.dll
+c:\users\administrator\documents\visual studio 2015\Projects\CardServer\Server\bin\Debug\ProudDotNetClient.dll
+c:\users\administrator\documents\visual studio 2015\Projects\CardServer\Server\bin\Debug\ProudDotNetServer.dll
+c:\users\administrator\documents\visual studio 2015\Projects\CardServer\Server\bin\Debug\UnityEngine.dll
+c:\users\administrator\documents\visual studio 2015\Projects\CardServer\Server\bin\Debug\Common.pdb
+c:\users\administrator\documents\visual studio 2015\Projects\CardServer\Server\bin\Debug\UnityEngine.xml
+c:\users\administrator\documents\visual studio 2015\Projects\CardServer\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2015\Projects\CardServer\Server\obj\Debug\Server.exe
+c:\users\administrator\documents\visual studio 2015\Projects\CardServer\Server\obj\Debug\Server.pdb

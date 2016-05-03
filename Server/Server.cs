@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,9 @@ namespace Server
 
         internal S2C.Proxy m_S2CProxy = new S2C.Proxy();
         internal C2S.Stub m_C2SStub = new C2S.Stub();
+
+        private ConcurrentDictionary<String, Group_S> m_groups = new ConcurrentDictionary<string, Group_S>();
+        private ConcurrentDictionary<HostID, Group_S> m_remoteClients = new ConcurrentDictionary<HostID, Group_S>();
 
         public Server()
         {
@@ -84,6 +88,16 @@ namespace Server
             {
 
             };
+            m_C2SStub.RequestLogon = (Nettention.Proud.HostID remote, Nettention.Proud.RmiContext rmiContext, String Groupname, bool isNewClient) =>
+            {
+                Group_S group;
+                if(!m_groups.TryGetValue(Groupname, out group))
+                {
+                    group = new Group_S();
+                }
+                m_S2CProxy.ReplyLogon(remote, rmiContext, (int)group.m_p2pGroupID, 0, "");
+                return true;
+            };
         }
 
         public void Start()
@@ -92,8 +106,8 @@ namespace Server
             sp.protocolVersion = new Nettention.Proud.Guid(Common.Vars.g_ProtocolVersion);
             sp.tcpPorts = new IntArray();
             sp.tcpPorts.Add(Common.Vars.g_serverPort);
-            sp.serverAddrAtClient = "112.166.83.47";
-            sp.localNicAddr = "112.166.83.47";
+            sp.serverAddrAtClient = "175.204.115.46";
+            sp.localNicAddr = "175.204.115.46";
             sp.SetExternalNetWorkerThreadPool(netWorkerThreadPool);
             sp.SetExternalUserWorkerThreadPool(userWorkerThreadPool);
 
